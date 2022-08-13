@@ -6,7 +6,7 @@ pac plugin init
 Set-Location ..
 Remove-Item .\pcf
 mkdir .\pcf
-pac pcf init -namespace ns --name name --template field
+pac pcf init --namespace ns --name name --template field
 
 Set-Location ..
 Remove-Item .\package
