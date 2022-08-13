@@ -6,4 +6,6 @@ Visual Studio Developer console required to run `pac plugin init`
 
 No changes to plugin or pcf templates
 
-* 
+* 1.3.6
+
+No changes to plugin or pcf templates
