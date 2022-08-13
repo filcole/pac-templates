@@ -29,3 +29,12 @@ Plugin:
 
 * Addition of Microsoft.NETFramework.ReferenceAssemblies to .csproj
 
+## 1.8.6
+
+PCF:
+
+* npm install automatically run by `pac pcf init`
+* package.json altered to add `npm run-script refreshTypes`
+* ControlManifest.Input.xml added external-service-usage option
+
+No changes to plugin or package deployer templates
