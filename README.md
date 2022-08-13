@@ -9,3 +9,8 @@ No changes to plugin or pcf templates
 * 1.3.6
 
 No changes to plugin or pcf templates
+
+* 1.5.5
+
+Adds package deployer template
+No changes to plugin or pcf templates
