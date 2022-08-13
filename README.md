@@ -38,3 +38,14 @@ PCF:
 * ControlManifest.Input.xml added external-service-usage option
 
 No changes to plugin or package deployer templates
+
+## 1.9.9
+
+PCF:
+
+* package.json added dev-dependency on TypeScript and @types/powerapps-component-framework
+
+Plugin:
+
+* plugin.csproj: Added reference to ProjectTypeGuids 4C25E9B5-9FA6-436c-8E19-B395D2A65FAF and FAE04EC0-301F-11D3-BF4B-00C04F79EFBC. (CWA and C# I think)
+* Add comments throughout and alter Trace() function (buggy)
