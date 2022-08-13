@@ -1,16 +1,31 @@
-* 1.3.1
+# Notable Changes to PAC Templates
 
-Visual Studio Developer console required to run `pac plugin init`
+## 1.3.1
 
-* 1.3.3 
+Note: Visual Studio Developer console required to run `pac plugin init`
 
-No changes to plugin or pcf templates
+## 1.3.3
 
-* 1.3.6
+* No changes to plugin or pcf templates
 
-No changes to plugin or pcf templates
+## 1.3.6
 
-* 1.5.5
+* No changes to plugin or pcf templates
 
-Adds package deployer template
-No changes to plugin or pcf templates
+## 1.5.5
+
+* Introduction of package deployer template `pac package init`.
+* No changes to plugin or pcf templates
+
+## 1.6.5
+
+PCF:
+
+* Addition of EsLint and TypeScript/EsLint rules to package.json
+* Default .eslintrc.json config
+* Addition of Microsoft.NETFramework.ReferenceAssemblies to .pcfproj
+
+Plugin:
+
+* Addition of Microsoft.NETFramework.ReferenceAssemblies to .csproj
+
