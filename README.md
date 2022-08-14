@@ -16,7 +16,7 @@ Plugin:
 
 * Use `nameof()` instead of hardcoding exception name
 * PluginBase.cs: Instead of CurrentUserService and SystemUserService, provide InitiatingUserService and PluginUserService
-* PluginBase.cs: Provide ServiceProvider, OrgSvcFactory and OrgSvcFactory propeties
+* PluginBase.cs: Provide ServiceProvider, OrgSvcFactory and OrgSvcFactory properties
 * PluginBase.cs: Improve Trace to include `CallerMemberName` attribute
 * PluginBase.cs: Fix provided Trace() method
 
