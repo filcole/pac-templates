@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Uii.Common.Entities;
-using Microsoft.Xrm.Tooling.PackageDeployment;
 using Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase;
 
 namespace package
@@ -16,6 +10,31 @@ namespace package
     [Export(typeof(IImportExtensions))]
     public class PackageImportExtension : ImportExtension
     {
+        #region Metadata
+
+        /// <summary>
+        /// Folder name where package assets are located in the final output package zip.
+        /// </summary>
+        public override string GetImportPackageDataFolderName => "PkgAssets";
+
+        /// <summary>
+        /// Name of the Import Package to Use
+        /// </summary>
+        /// <param name="plural">if true, return plural version</param>
+        public override string GetNameOfImport(bool plural) => "package";
+
+        /// <summary>
+        /// Long name of the Import Package.
+        /// </summary>
+        public override string GetLongNameOfImport => "package";
+
+        /// <summary>
+        /// Description of the package, used in the package selection UI
+        /// </summary>
+        public override string GetImportPackageDescriptionText => "package";
+
+        #endregion
+
         /// <summary>
         /// Called to Initialize any functions in the Custom Extension.
         /// </summary>
@@ -32,18 +51,6 @@ namespace package
         public override bool BeforeImportStage()
         {
             return true;
-        }
-
-        /// <summary>
-        /// Called before each application record is imported.
-        /// This is UII Specific and is not generally used by Package Developers
-        /// </summary>
-        /// <see cref="ImportExtension.BeforeApplicationRecordImport"/>
-        /// <param name="app">App Record</param>
-        /// <returns></returns>
-        public override ApplicationRecord BeforeApplicationRecordImport(ApplicationRecord app)
-        {
-            return app;
         }
 
         /// <summary>
@@ -84,47 +91,5 @@ namespace package
         {
             return true;
         }
-
-        #region Properties
-
-        /// <summary>
-        /// Name of the Import Package to Use
-        /// </summary>
-        /// <param name="plural">if true, return plural version</param>
-        /// <returns></returns>
-        public override string GetNameOfImport(bool plural)
-        {
-            return "Package Short Name";
-        }
-
-        /// <summary>
-        /// Folder Name for the Package data.
-        /// </summary>
-        public override string GetImportPackageDataFolderName
-        {
-            get {
-                // WARNING this value directly correlates to the folder name in the Solution Explorer where the ImportConfig.xml and sub content is located.
-                // Changing this name requires that you also change the correlating name in the Solution Explorer
-                return "PkgFolder";
-            }
-        }
-
-        /// <summary>
-        /// Description of the package, used in the package selection UI
-        /// </summary>
-        public override string GetImportPackageDescriptionText
-        {
-            get { return "Package Description"; }
-        }
-
-        /// <summary>
-        /// Long name of the Import Package.
-        /// </summary>
-        public override string GetLongNameOfImport
-        {
-            get { return "Package Long Name"; }
-        }
-
-        #endregion
     }
 }

@@ -75,3 +75,28 @@ Plugin:
 
 * Added nuget reference (probably to build nuget package for the dependent assemblies work)
 * Whitespace fixes
+
+## 1.17.5
+
+PCF:
+
+* .eslintrc.json: Adds ComponentFramework as a global
+
+Plugin:
+
+* Use `nameof()` instead of hardcoding exception name
+* PluginBase.cs: Instead of CurrentUserService and SystemUserService, provide InitiatingUserService and PluginUserService
+* PluginBase.cs: Provide ServiceProvider, OrgSvcFactory and OrgSvcFactory propeties
+* PluginBase.cs: Improve Trace to include `CallerMemberName` attribute
+* PluginBase.cs: Fix provided Trace() method
+
+Package:
+
+* Remove all html content since packages intended to be installed via `pac package deploy`
+* PkgFolder renamed to PgkAssets
+* ImportConfig.xml: Removed references to agentdesktopzipfile, agentdesktopexename, and crmmigdataimportfile which were used by USD
+* ImportConfig.xml: Added comments indicating this file now mostly automatically populated during the build
+* ImportConfig.xml: Added file manifest.ppkg.json.
+* Removed files Properties/AssemblyInfo.cs, app.config and package.sln
+* package.csproj: Massively simplified, referring to nuget package `Microsoft.PowerApps.MSBuild.PDPackage`
+* PackageImportExtension.cs: Simplified with metadata region moved to the top, and references to USD/UII
