@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ACCB4C73-C1F4-4CE4-AED2-9A625948A36A}</ProjectGuid>
+    <ProjectGuid>{26D37CF8-ACE3-4C8A-8C9B-7D754A86964F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CDSPackage</RootNamespace>
-    <AssemblyName>CDSPackage</AssemblyName>
+    <RootNamespace>package</RootNamespace>
+    <AssemblyName>package</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDSPackageImportExtension.cs" />
+    <Compile Include="PackageImportExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,7 +84,7 @@
     <PackageReference Include="Microsoft.CrmSdk.Workflow" Version="9.0.2.28" />
     <PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.0.51" />
     <PackageReference Include="Microsoft.CrmSdk.XrmTooling.PackageDeployment" Version="9.1.0.43" />
-	<PackageReference Include="Microsoft.CrmSdk.XrmTooling.PackageDeployment.Core" Version="9.1.0.40" />
+    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.PackageDeployment.Core" Version="9.1.0.40" />
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.8" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.22" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
@@ -92,8 +92,5 @@
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
   </ItemGroup>
-  <Target Name="ZipOutputPath" AfterTargets="Build">
-    <ZipDirectory Overwrite="true" SourceDirectory="data" DestinationFile="$(PackageFolder)\data.zip" />
-  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
