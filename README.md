@@ -17,7 +17,7 @@ Plugin:
 Package:
 
 * Remove all html content since packages intended to be installed via `pac package deploy`
-* PkgFolder renamed to PgkAssets
+* PkgFolder renamed to PkgAssets
 * ImportConfig.xml: Removed references to agentdesktopzipfile, agentdesktopexename, and crmmigdataimportfile which were used by USD
 * ImportConfig.xml: Added comments indicating this file now mostly automatically populated during the build
 * ImportConfig.xml: Added file manifest.ppkg.json.
