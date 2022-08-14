@@ -1,5 +1,11 @@
 # Notable Changes to PAC Templates
 
+Always refer to the official [Power Platform CLI release notes](https://www.nuget.org/packages/Microsoft.PowerApps.CLI/#release-body-tab) on NuGet.  This repo is my highlight of the changes to the templates produced and gives me a quick way to diff for the changes using the git history.
+
+* PCFs via `pac pcf init --namespace mynamespace --name myname --template field --run-npm-install false
+* Plugins via `pac plugin init`
+* Package Deployers via `pac package init`
+
 ## 1.17.5
 
 PCF:
@@ -44,7 +50,7 @@ Package:
 
 * Remove empty data_schema.xml and data.xml files
 * Clear data.zip from ImportConfig.xml
-* Remove reference to CSD from AssemblyInfo.cs
+* Remove reference to CDS from AssemblyInfo.cs
 * Remove CDS from filenames of CDSPackage.sln, CDSpackage.csproj, and CDSPackageImportExtensions.cs
 
 Plugin:
