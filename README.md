@@ -52,10 +52,6 @@ Plugin:
 
 ## 1.11.7
 
-PCF:
-
-Plugin:
-
 Package:
 
 * Remove empty data_schema.xml and data.xml files
@@ -66,3 +62,16 @@ Package:
 Plugin:
 
 * Plugin1.cs: Use `nameof()` and `var` instead of explicit types
+
+## 1.14.2
+
+PCF:
+
+* index.ts: Use spaces instead of tabs!
+* .eslintrc.json: Add "eslint:recommended" and "plugin:react/recommended"
+* package.json: Remove eslint-config-standard from dev dependencies
+
+Plugin:
+
+* Added nuget reference (probably to build nuget package for the dependent assemblies work)
+* Whitespace fixes
