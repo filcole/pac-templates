@@ -19,7 +19,7 @@ namespace plugin
         /// <summary>
         /// Initializes a new instance of the <see cref="PluginBase"/> class.
         /// </summary>
-        /// <param name="pluginClassName">The <see cref=" cred="Type"/> of the plugin class.</param>
+        /// <param name="pluginClassName">The <see cref="Type"/> of the plugin class.</param>
         internal PluginBase(Type pluginClassName)
         {
             PluginClassName = pluginClassName.ToString();
@@ -49,7 +49,7 @@ namespace plugin
             try
             {
                 // Invoke the custom implementation
-                ExecuteCdsPlugin(localPluginContext);
+                ExecuteDataversePlugin(localPluginContext);
 
                 // Now exit - if the derived plugin has incorrectly registered overlapping event registrations, guard against multiple executions.
                 return;
@@ -70,7 +70,7 @@ namespace plugin
         /// Placeholder for a custom plug-in implementation.
         /// </summary>
         /// <param name="localPluginContext">Context for the current plug-in.</param>
-        protected virtual void ExecuteCdsPlugin(ILocalPluginContext localPluginContext)
+        protected virtual void ExecuteDataversePlugin(ILocalPluginContext localPluginContext)
         {
             // Do nothing.
         }
@@ -196,7 +196,7 @@ namespace plugin
 
             NotificationService = serviceProvider.Get<IServiceEndpointNotificationService>();
 
-            IOrganizationServiceFactory factory = serviceProvider.Get<IOrganizationServiceFactory>();
+            OrgSvcFactory = serviceProvider.Get<IOrganizationServiceFactory>();
 
             PluginUserService = serviceProvider.GetOrganizationService(PluginExecutionContext.UserId); // User that the plugin is registered to run as, Could be same as current user.
 
@@ -256,8 +256,18 @@ namespace plugin
             // The duration since the last trace.
             var deltaMilliseconds = utcNow.Subtract(_previousTraceTime).TotalMilliseconds;
 
-            _tracingService.Trace($"[+{deltaMilliseconds:N0}ms] - {string.Format(message, args)}");
+            try
+            {
 
+                if (args == null || args.Length == 0)
+                    _tracingService.Trace($"[+{deltaMilliseconds:N0}ms] - {message}");
+                else
+                    _tracingService.Trace($"[+{deltaMilliseconds:N0}ms] - {string.Format(message, args)}");
+            }
+            catch (FormatException ex)
+            {
+                throw new InvalidPluginExecutionException($"Failed to write trace message due to error {ex.Message}", ex);
+            }
             _previousTraceTime = utcNow;
         }
     }

@@ -3,7 +3,7 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyTitle>package</AssemblyTitle>
     <Product>package</Product>
-    <Copyright>Copyright © 2022</Copyright>
+    <Copyright>Copyright © 2024</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerApps.MSBuild.PDPackage" Version="1.*">
